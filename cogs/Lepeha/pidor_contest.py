@@ -3,6 +3,11 @@ import discord
 import asyncio
 import random
 from discord.ext import commands
+import os
+import dotenv
+
+dotenv.load_dotenv()
+token = str(os.getenv("TOKEN"))
 
 intents = discord.Intents.default()
 intents.members = True
@@ -78,4 +83,4 @@ async def on_application_command_error(
         raise error
 
 
-bot.run('MTAzNTE2MDg1NzkwNDE2MDgxOA.GySbD2.luX6dxGub9kBRk5NfblKzBFKRy6WLzBsZJgzpU')
+bot.run(token)
